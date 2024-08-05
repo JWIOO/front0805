@@ -7,52 +7,54 @@ const ImpactSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        console.log("ehllo");
-        // Transform class를 더해 실행 (animate-appear: next.config.js에 정의되어있음)
-        const appearWord = () => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target
-                .querySelectorAll(`.${styles.word}`)
-                .forEach((word, index) => {
-                  setTimeout(() => {
-                    word.classList.add(styles.animateAppear);
-                  }, index * 300);
-                });
-            }
-          });
-        };
+    const currentRef = sectionRef.current;
 
-        // 화면에 올라오고 나서 0.2초(200ms) 후 실행
-        setTimeout(appearWord, 200);
-      },
-      { threshold: 0.5 }
+    const observer = new IntersectionObserver(
+        (entries) => {
+          console.log("hello");
+          // Transform class를 더해 실행 (animate-appear: next.config.js에 정의되어있음)
+          const appearWord = () => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target
+                    .querySelectorAll(`.${styles.word}`)
+                    .forEach((word, index) => {
+                      setTimeout(() => {
+                        word.classList.add(styles.animateAppear);
+                      }, index * 300);
+                    });
+              }
+            });
+          };
+
+          // 화면에 올라오고 나서 0.2초(200ms) 후 실행
+          setTimeout(appearWord, 200);
+        },
+        { threshold: 0.5 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
 
   return (
-    <section ref={sectionRef} className={styles.impactSection}>
-      <div className={styles.aspectRatio}>
-        <Image
-          src="/images/custom/impact.png"
-          alt="Banner"
-          layout="fill"
-          objectFit="cover"
-        />
-        <div className={styles.overlay}></div>
-        <div className={styles.textContainer}>
+      <section ref={sectionRef} className={styles.impactSection}>
+        <div className={styles.aspectRatio}>
+          <Image
+              src="/images/custom/impact.png"
+              alt="Banner"
+              layout="fill"
+              objectFit="cover"
+          />
+          <div className={styles.overlay}></div>
+          <div className={styles.textContainer}>
           <span className="w-full">
             <span className={styles.word}>꽁꽁 얼어붙은 </span>
             <b className={`${styles.textGoldenrod} ${styles.word}`}>
@@ -66,9 +68,9 @@ const ImpactSection = () => {
             <b className={`${styles.textGoldenrod} ${styles.word}`}> 걸어</b>
             <span className={styles.word}>다닙니다.</span>
           </span>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 };
 
