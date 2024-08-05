@@ -1,0 +1,14 @@
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 48px;
+  height: 48px; /* 12px */
+  padding: 12px;
+  border-radius: 9999px; /* Full rounded */
+  background-color: black;
+  box-sizing: border-box;
+
+  margin-left: 16px;
+}

@@ -1,0 +1,57 @@
+/* PolicyList.module.scss */
+
+.gridPolicyList {
+  display: none;
+
+  @media (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem 1rem; /* Changed gap values to reduce spacing */
+    margin-right: 2rem;
+  }
+}
+
+.policyLink {
+  font-size: 12px;
+  line-height: 18px;
+  color: #b0b8c1;
+  text-align: left;
+  white-space: nowrap;
+
+  @media (min-width: 1200px) {
+    white-space: nowrap;
+  }
+}
+
+.dropdownPolicyList {
+  display: block;
+
+  @media (min-width: 1200px) {
+    display: none;
+  }
+}
+
+.dropdownButton {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  font-size: 12px;
+  line-height: 18px;
+  color: #b0b8c1;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdownIcon {
+  margin-left: 0.5rem;
+  color: #b0b8c1;
+}
+
+.dropdownContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 75px;
+  margin-top: 1.25rem;
+  white-space: nowrap;
+}

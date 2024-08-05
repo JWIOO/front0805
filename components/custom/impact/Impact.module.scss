@@ -1,0 +1,72 @@
+/* ImpactSection.module.scss */
+
+.impactSection {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 150px;
+}
+
+.aspectRatio {
+  position: relative;
+  width: 100%;
+  padding-bottom: 16.875%; /*이미지 ratio */
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: white;
+  opacity: 0.3;
+}
+
+.textContainer {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 100%;
+  background-color: black;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 800;
+    text-align: center;
+    color: white;
+
+    @media (min-width: 640px) {
+      font-size: 28px;
+      line-height: 42px;
+    }
+  }
+
+  @media (min-width: 640px) {
+    height: 80px;
+  }
+}
+
+.word {
+  opacity: 0;
+}
+
+.textGoldenrod {
+  color: goldenrod;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animateAppear {
+  animation: appear 0s forwards;
+}

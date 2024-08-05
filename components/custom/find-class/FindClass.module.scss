@@ -1,0 +1,75 @@
+/* FindClassSection.module.scss */
+
+.findClassSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  background-color: white;
+  padding-bottom: 50px;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 42px;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  margin-top: 50px;
+  margin-bottom: 24px;
+
+  @media (min-width: 640px) {
+    font-size: 27.89px;
+  }
+
+  .highlight {
+    color: rgba(231, 190, 45, 0.95);
+  }
+}
+
+.imageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0 8px;
+}
+
+.imageAndText {
+  padding: 8px;
+  position: relative;
+  width: 160px;
+  height: 130px;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+
+  img {
+    transition: transform 0.5s ease;
+  }
+
+  &:focus img,
+  &:hover img {
+    transform: scale(1.1);
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.5s;
+
+  @media (min-width: 640px) {
+    width: 140px;
+    height: 110px;
+  }
+
+  @media (min-width: 768px) {
+    width: 120px;
+    height: 90px;
+  }
+}
