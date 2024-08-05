@@ -279,7 +279,7 @@ const SignAgree = () => {
                     style={{
                         display: 'none'
                     }}>
-                    네이버 혜택 정보를 받으시려면 '개인정보 수집 및 이용'에 동의해 주세요.
+                    네이버 혜택 정보를 받으시려면 &apos;개인정보 수집 및 이용&apos;에 동의해 주세요.
                 </div>
 
                 <div className="btn_submit_wrap">
